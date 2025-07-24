@@ -39,7 +39,7 @@ const JobSearchPage = () => {
     searchJobs(searchFilters);
   };
 
-  const handleApply = async (job) => {
+const handleApply = async (job) => {
     try {
       await addApplication({
         jobId: job.Id,
@@ -47,24 +47,56 @@ const JobSearchPage = () => {
         notes: `Applied to ${job.title} at ${job.company} through JobHunt Pro`
       });
       
-      toast.success(`Successfully applied to ${job.title}!`, {
+      toast.success(`🎉 Successfully applied to ${job.title} at ${job.company}!`, {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 4000,
       });
     } catch (err) {
-      toast.error("Failed to submit application. Please try again.", {
+      console.error("Application submission error:", err);
+      toast.error(`❌ Failed to submit application for ${job.title}. Please try again.`, {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 4000,
       });
     }
   };
 
   const handleViewDetails = (job) => {
-    // In a real app, this would navigate to a job details page
-    toast.info("Job details view would open here", {
+    // Display comprehensive job details through enhanced toast notifications
+    const salaryInfo = job.salary?.min && job.salary?.max 
+      ? `$${job.salary.min.toLocaleString()} - $${job.salary.max.toLocaleString()}`
+      : "Competitive salary";
+    
+    const requirements = job.requirements && job.requirements.length > 0 
+      ? job.requirements.slice(0, 5).join(", ") + (job.requirements.length > 5 ? "..." : "")
+      : "Requirements not specified";
+
+    // Job overview
+    toast.info(`🏢 ${job.title} at ${job.company}\n📍 ${job.location} • 🏭 ${job.industry}\n💰 ${salaryInfo}`, {
       position: "top-right",
-      autoClose: 2000,
+      autoClose: 6000,
     });
+
+    // Job description and requirements
+    setTimeout(() => {
+      toast.success(`📋 Job Description:\n${job.description?.substring(0, 200)}${job.description?.length > 200 ? "..." : ""}\n\n🎯 Key Requirements:\n${requirements}`, {
+        position: "top-right",
+        autoClose: 8000,
+      });
+    }, 500);
+
+    // Application deadline
+    if (job.applicationDeadline) {
+      setTimeout(() => {
+        const deadline = new Date(job.applicationDeadline);
+        const timeUntilDeadline = deadline.getTime() - new Date().getTime();
+        const daysLeft = Math.ceil(timeUntilDeadline / (1000 * 60 * 60 * 24));
+        
+        toast.warning(`⏰ Application Deadline: ${deadline.toLocaleDateString()}\n${daysLeft > 0 ? `${daysLeft} days remaining` : "Deadline passed"}`, {
+          position: "top-right",
+          autoClose: 5000,
+        });
+      }, 1000);
+    }
   };
 
   const handleRetry = () => {
