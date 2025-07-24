@@ -207,107 +207,117 @@ const JobAlertsPage = () => {
         </div>
 
         {/* Create Alert Form */}
-        {showCreateForm && (
-          <Card className="p-6 mb-8">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-gray-900 font-display">
-                Create New Job Alert
-              </h2>
-              <button
-                onClick={() => setShowCreateForm(false)}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-              >
-                <ApperIcon name="X" size={20} />
-              </button>
-            </div>
-            
-            <form onSubmit={handleCreateAlert} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Alert Name
-                  </label>
-                  <Input
-                    value={formData.name}
-                    onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                    placeholder="e.g., Senior Developer Jobs"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Job Title
-                  </label>
-                  <Input
-                    value={formData.jobTitle}
-                    onChange={(e) => setFormData(prev => ({ ...prev, jobTitle: e.target.value }))}
-                    placeholder="e.g., Software Engineer"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Location
-                  </label>
-                  <Input
-                    value={formData.location}
-                    onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
-                    placeholder="e.g., San Francisco, Remote"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Frequency
-                  </label>
-                  <select
-                    value={formData.frequency}
-                    onChange={(e) => setFormData(prev => ({ ...prev, frequency: e.target.value }))}
-                    className="input-field"
+{showCreateForm && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+            onClick={() => setShowCreateForm(false)}
+          >
+            <div 
+              className="bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-xl font-bold text-gray-900 font-display">
+                    Create New Job Alert
+                  </h2>
+                  <button
+                    onClick={() => setShowCreateForm(false)}
+                    className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
                   >
-                    <option value="daily">Daily</option>
-                    <option value="weekly">Weekly</option>
-                  </select>
+                    <ApperIcon name="X" size={20} />
+                  </button>
                 </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-3">
-                  Industries (Select multiple)
-                </label>
-                <div className="flex flex-wrap gap-3">
-                  {industries.map((industry) => (
-                    <label
-                      key={industry}
-                      className="flex items-center space-x-2 cursor-pointer"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={formData.industries.includes(industry)}
-                        onChange={() => handleIndustryToggle(industry)}
-                        className="w-4 h-4 text-secondary border-gray-300 rounded focus:ring-secondary"
+                
+                <form onSubmit={handleCreateAlert} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Alert Name
+                      </label>
+                      <Input
+                        value={formData.name}
+                        onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                        placeholder="e.g., Senior Developer Jobs"
+                        required
                       />
-                      <span className="text-sm text-gray-700">{industry}</span>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Job Title
+                      </label>
+                      <Input
+                        value={formData.jobTitle}
+                        onChange={(e) => setFormData(prev => ({ ...prev, jobTitle: e.target.value }))}
+                        placeholder="e.g., Software Engineer"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Location
+                      </label>
+                      <Input
+                        value={formData.location}
+                        onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
+                        placeholder="e.g., San Francisco, Remote"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Frequency
+                      </label>
+                      <select
+                        value={formData.frequency}
+                        onChange={(e) => setFormData(prev => ({ ...prev, frequency: e.target.value }))}
+                        className="input-field"
+                      >
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-3">
+                      Industries (Select multiple)
                     </label>
-                  ))}
-                </div>
+                    <div className="flex flex-wrap gap-3">
+                      {industries.map((industry) => (
+                        <label
+                          key={industry}
+                          className="flex items-center space-x-2 cursor-pointer"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={formData.industries.includes(industry)}
+                            onChange={() => handleIndustryToggle(industry)}
+                            className="w-4 h-4 text-secondary border-gray-300 rounded focus:ring-secondary"
+                          />
+                          <span className="text-sm text-gray-700">{industry}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="flex justify-end space-x-4">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() => setShowCreateForm(false)}
+                    >
+                      Cancel
+                    </Button>
+                    <Button type="submit" variant="success" icon="Plus">
+                      Create Alert
+                    </Button>
+                  </div>
+                </form>
               </div>
-              
-              <div className="flex justify-end space-x-4">
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={() => setShowCreateForm(false)}
-                >
-                  Cancel
-                </Button>
-                <Button type="submit" variant="success" icon="Plus">
-                  Create Alert
-                </Button>
-              </div>
-            </form>
-          </Card>
+            </div>
+          </div>
         )}
 
         {/* Alerts List */}
