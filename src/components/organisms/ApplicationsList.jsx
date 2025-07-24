@@ -48,7 +48,7 @@ const ApplicationsList = ({
             key={application.Id}
             application={application}
             job={job}
-            onViewDetails={onViewDetails}
+onViewDetails={onViewDetails}
             onWithdraw={onWithdraw}
           />
         );

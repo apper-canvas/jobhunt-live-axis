@@ -4,14 +4,15 @@ import ApplicationsList from "@/components/organisms/ApplicationsList";
 import Button from "@/components/atoms/Button";
 import Badge from "@/components/atoms/Badge";
 import ApperIcon from "@/components/ApperIcon";
+import JobDetailsModal from "@/components/molecules/JobDetailsModal";
 import { useApplications } from "@/hooks/useApplications";
 import { useJobs } from "@/hooks/useJobs";
-
 const ApplicationsPage = () => {
   const [statusFilter, setStatusFilter] = useState("all");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(null);
   const { applications, loading, error, refetch, updateApplication, deleteApplication } = useApplications();
   const { jobs } = useJobs();
-
   const statusOptions = [
     { value: "all", label: "All Applications", count: applications.length },
     { value: "applied", label: "Applied", count: applications.filter(app => app.status === "Applied").length },
@@ -24,11 +25,14 @@ const ApplicationsPage = () => {
     ? applications 
     : applications.filter(app => app.status.toLowerCase() === statusFilter);
 
-  const handleViewDetails = (job) => {
-    toast.info("Job details view would open here", {
-      position: "top-right",
-      autoClose: 2000,
-    });
+const handleViewDetails = (job) => {
+    setSelectedJob(job);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedJob(null);
   };
 
   const handleWithdraw = async (applicationId) => {
@@ -179,6 +183,13 @@ const ApplicationsPage = () => {
           onRetry={refetch}
           onViewDetails={handleViewDetails}
           onWithdraw={handleWithdraw}
+/>
+
+        {/* Job Details Modal */}
+        <JobDetailsModal
+          job={selectedJob}
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
         />
       </div>
     </div>
