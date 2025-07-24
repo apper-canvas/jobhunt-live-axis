@@ -8,8 +8,9 @@ export const jobService = {
       });
 
       const params = {
-        fields: [
+fields: [
           { field: { Name: "Name" } },
+          { field: { Name: "Tags" } },
           { field: { Name: "title_c" } },
           { field: { Name: "company_c" } },
           { field: { Name: "location_c" } },
@@ -99,21 +100,7 @@ export const jobService = {
       }
 
       // Transform data to match UI expectations
-      const transformedJobs = (response.data || []).map(job => ({
-        Id: job.Id,
-        title: job.title_c || '',
-        company: job.company_c || '',
-        location: job.location_c || '',
-        industry: job.industry_c || '',
-        salary: {
-          min: job.salary_min_c || 0,
-          max: job.salary_max_c || 0
-        },
-        description: job.description_c || '',
-        requirements: job.requirements_c ? job.requirements_c.split(',').map(r => r.trim()) : [],
-        postedDate: job.posted_date_c || new Date().toISOString(),
-        applicationDeadline: job.application_deadline_c || new Date().toISOString()
-      }));
+const transformedJobs = response.data || [];
 
       return transformedJobs;
     } catch (error) {
@@ -135,8 +122,9 @@ export const jobService = {
       });
 
       const params = {
-        fields: [
+fields: [
           { field: { Name: "Name" } },
+          { field: { Name: "Tags" } },
           { field: { Name: "title_c" } },
           { field: { Name: "company_c" } },
           { field: { Name: "location_c" } },
@@ -157,21 +145,7 @@ export const jobService = {
       }
 
       const job = response.data;
-      return {
-        Id: job.Id,
-        title: job.title_c || '',
-        company: job.company_c || '',
-        location: job.location_c || '',
-        industry: job.industry_c || '',
-        salary: {
-          min: job.salary_min_c || 0,
-          max: job.salary_max_c || 0
-        },
-        description: job.description_c || '',
-        requirements: job.requirements_c ? job.requirements_c.split(',').map(r => r.trim()) : [],
-        postedDate: job.posted_date_c || new Date().toISOString(),
-        applicationDeadline: job.application_deadline_c || new Date().toISOString()
-      };
+return job;
     } catch (error) {
       if (error?.response?.data?.message) {
         console.error(`Error fetching job with ID ${id}:`, error?.response?.data?.message);
