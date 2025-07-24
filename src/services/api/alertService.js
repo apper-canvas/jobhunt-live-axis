@@ -232,9 +232,11 @@ export const alertService = {
       if (response.results) {
         const failedRecords = response.results.filter(result => !result.success);
         
-        if (failedRecords.length > 0) {
+if (failedRecords.length > 0) {
           console.error(`Failed to update alert ${failedRecords.length} records:${JSON.stringify(failedRecords)}`);
-          throw new Error("Failed to update alert");
+          // Throw the specific error message from the API response
+          const firstError = failedRecords[0];
+          throw new Error(firstError.message || "Failed to update alert");
         }
 
         const successfulRecord = response.results.find(result => result.success);
