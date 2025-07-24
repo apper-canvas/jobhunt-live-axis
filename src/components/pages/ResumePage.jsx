@@ -57,11 +57,11 @@ const ResumePage = () => {
 
     setUploading(true);
     
-    try {
+try {
       // In a real app, you would upload to a file storage service
       const resumeData = {
         name: file.name,
-        fileUrl: URL.createObjectURL(file), // Temporary URL for demo
+        fileUrl: `https://example.com/resumes/${file.name}`, // Valid URL format for demo
         isDefault: resumes.length === 0 // First resume becomes default
       };
 
