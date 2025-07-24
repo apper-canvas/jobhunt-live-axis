@@ -17,7 +17,8 @@ const JobCard = ({ job, onApply, onViewDetails, isApplied = false }) => {
     return "Competitive salary";
   };
 
-  const getCompanyInitials = (companyName) => {
+const getCompanyInitials = (companyName) => {
+    if (!companyName) return "NA";
     return companyName
       .split(" ")
       .map(word => word[0])
@@ -27,59 +28,86 @@ const JobCard = ({ job, onApply, onViewDetails, isApplied = false }) => {
   };
 
   return (
-    <Card className="p-6 h-full flex flex-col">
+<Card className="p-6 h-full flex flex-col">
       <div className="flex items-start space-x-4 mb-4">
         <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-sm">
-          {getCompanyInitials(job.company)}
+          {getCompanyInitials(job.company_c)}
         </div>
         <div className="flex-1 min-w-0">
           <h3 className="font-bold text-lg text-gray-900 truncate font-display">
-            {job.title}
+            {job.title_c || 'Job Title Not Available'}
           </h3>
-          <p className="text-gray-600 font-medium">{job.company}</p>
+          <p className="text-gray-600 font-medium">{job.company_c || 'Company Not Specified'}</p>
           <div className="flex items-center text-sm text-gray-500 mt-1">
             <ApperIcon name="MapPin" size={14} className="mr-1" />
-            <span>{job.location}</span>
+            <span>{job.location_c || 'Location Not Specified'}</span>
           </div>
         </div>
       </div>
 
       <div className="flex-1">
         <p className="text-gray-700 mb-4 line-clamp-3 leading-relaxed">
-          {job.description}
+          {job.description_c || 'Job description not available'}
         </p>
 
         <div className="space-y-3 mb-4">
           <div className="flex items-center text-sm text-gray-600">
             <ApperIcon name="DollarSign" size={16} className="mr-2 text-accent" />
-            <span className="font-medium">{formatSalary(job.salary)}</span>
+            <span className="font-medium">
+              {job.salary_min_c && job.salary_max_c 
+                ? `$${job.salary_min_c.toLocaleString()} - $${job.salary_max_c.toLocaleString()}`
+                : 'Competitive salary'
+              }
+            </span>
           </div>
           
           <div className="flex items-center text-sm text-gray-600">
             <ApperIcon name="Clock" size={16} className="mr-2 text-secondary" />
-            <span>Posted {formatDistanceToNow(new Date(job.postedDate))} ago</span>
+            <span>
+              Posted {job.posted_date_c 
+                ? formatDistanceToNow(new Date(job.posted_date_c)) + ' ago'
+                : 'recently'
+              }
+            </span>
           </div>
 
           <div className="flex items-center text-sm text-gray-600">
             <ApperIcon name="Building2" size={16} className="mr-2 text-primary" />
-            <Badge variant="outline" size="sm">{job.industry}</Badge>
+            <Badge variant="outline" size="sm">{job.industry_c || 'Industry Not Specified'}</Badge>
           </div>
         </div>
 
-        {job.requirements && job.requirements.length > 0 && (
+        {job.requirements_c && (
           <div className="mb-4">
             <p className="text-sm font-medium text-gray-700 mb-2">Key Requirements:</p>
             <div className="flex flex-wrap gap-1">
-              {job.requirements.slice(0, 3).map((req, index) => (
-                <Badge key={index} variant="default" size="sm" className="text-xs">
-                  {req}
-                </Badge>
-              ))}
-              {job.requirements.length > 3 && (
-                <Badge variant="outline" size="sm" className="text-xs">
-                  +{job.requirements.length - 3} more
-                </Badge>
-              )}
+              {(() => {
+                // Handle requirements as string, split by common delimiters
+                const requirements = typeof job.requirements_c === 'string' 
+                  ? job.requirements_c.split(/[,\n•-]/).map(req => req.trim()).filter(req => req)
+                  : Array.isArray(job.requirements_c) 
+                    ? job.requirements_c 
+                    : [];
+                
+                return requirements.slice(0, 3).map((req, index) => (
+                  <Badge key={index} variant="default" size="sm" className="text-xs">
+                    {req}
+                  </Badge>
+                ));
+              })()}
+              {(() => {
+                const requirements = typeof job.requirements_c === 'string' 
+                  ? job.requirements_c.split(/[,\n•-]/).map(req => req.trim()).filter(req => req)
+                  : Array.isArray(job.requirements_c) 
+                    ? job.requirements_c 
+                    : [];
+                
+                return requirements.length > 3 && (
+                  <Badge variant="outline" size="sm" className="text-xs">
+                    +{requirements.length - 3} more
+                  </Badge>
+                );
+              })()}
             </div>
           </div>
         )}
