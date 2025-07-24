@@ -44,16 +44,16 @@ const handleApply = async (job) => {
       await addApplication({
         jobId: job.Id,
         resumeUsed: "Default Resume",
-        notes: `Applied to ${job.title} at ${job.company} through JobHunt Pro`
+        notes: `Applied to ${job.title_c} at ${job.company_c} through JobHunt Pro`
       });
       
-      toast.success(`🎉 Successfully applied to ${job.title} at ${job.company}!`, {
+      toast.success(`🎉 Successfully applied to ${job.title_c} at ${job.company_c}!`, {
         position: "top-right",
         autoClose: 4000,
       });
     } catch (err) {
       console.error("Application submission error:", err);
-      toast.error(`❌ Failed to submit application for ${job.title}. Please try again.`, {
+      toast.error(`❌ Failed to submit application for ${job.title_c}. Please try again.`, {
         position: "top-right",
         autoClose: 4000,
       });
@@ -62,32 +62,32 @@ const handleApply = async (job) => {
 
   const handleViewDetails = (job) => {
     // Display comprehensive job details through enhanced toast notifications
-    const salaryInfo = job.salary?.min && job.salary?.max 
-      ? `$${job.salary.min.toLocaleString()} - $${job.salary.max.toLocaleString()}`
+    const salaryInfo = job.salary_min_c && job.salary_max_c 
+      ? `$${job.salary_min_c.toLocaleString()} - $${job.salary_max_c.toLocaleString()}`
       : "Competitive salary";
     
-    const requirements = job.requirements && job.requirements.length > 0 
-      ? job.requirements.slice(0, 5).join(", ") + (job.requirements.length > 5 ? "..." : "")
+    const requirements = job.requirements_c && job.requirements_c.length > 0 
+      ? job.requirements_c.substring(0, 150) + (job.requirements_c.length > 150 ? "..." : "")
       : "Requirements not specified";
 
     // Job overview
-    toast.info(`🏢 ${job.title} at ${job.company}\n📍 ${job.location} • 🏭 ${job.industry}\n💰 ${salaryInfo}`, {
+    toast.info(`🏢 ${job.title_c} at ${job.company_c}\n📍 ${job.location_c} • 🏭 ${job.industry_c}\n💰 ${salaryInfo}`, {
       position: "top-right",
       autoClose: 6000,
     });
 
     // Job description and requirements
     setTimeout(() => {
-      toast.success(`📋 Job Description:\n${job.description?.substring(0, 200)}${job.description?.length > 200 ? "..." : ""}\n\n🎯 Key Requirements:\n${requirements}`, {
+      toast.success(`📋 Job Description:\n${job.description_c?.substring(0, 200)}${job.description_c?.length > 200 ? "..." : ""}\n\n🎯 Key Requirements:\n${requirements}`, {
         position: "top-right",
         autoClose: 8000,
       });
     }, 500);
 
     // Application deadline
-    if (job.applicationDeadline) {
+    if (job.application_deadline_c) {
       setTimeout(() => {
-        const deadline = new Date(job.applicationDeadline);
+        const deadline = new Date(job.application_deadline_c);
         const timeUntilDeadline = deadline.getTime() - new Date().getTime();
         const daysLeft = Math.ceil(timeUntilDeadline / (1000 * 60 * 60 * 24));
         
