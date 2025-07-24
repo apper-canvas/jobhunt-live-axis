@@ -1,0 +1,50 @@
+[
+  {
+    "Id": 1,
+    "name": "Senior Developer Positions",
+    "filters": {
+      "jobTitle": "Senior Developer",
+      "location": "San Francisco",
+      "industries": ["Technology"],
+      "salaryRange": {
+        "label": "$100K - $150K",
+        "min": 100000,
+        "max": 150000
+      }
+    },
+    "frequency": "daily",
+    "isActive": true
+  },
+  {
+    "Id": 2,
+    "name": "Remote Data Science Jobs",
+    "filters": {
+      "jobTitle": "Data Scientist",
+      "location": "Remote",
+      "industries": ["Technology"],
+      "salaryRange": {
+        "label": "$100K - $150K",
+        "min": 100000,
+        "max": 150000
+      }
+    },
+    "frequency": "weekly",
+    "isActive": true
+  },
+  {
+    "Id": 3,
+    "name": "Marketing Manager Opportunities",
+    "filters": {
+      "jobTitle": "Marketing Manager",
+      "location": "New York",
+      "industries": ["Marketing"],
+      "salaryRange": {
+        "label": "$75K - $100K",
+        "min": 75000,
+        "max": 100000
+      }
+    },
+    "frequency": "daily",
+    "isActive": false
+  }
+]

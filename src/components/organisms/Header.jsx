@@ -1,0 +1,110 @@
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Button from "@/components/atoms/Button";
+import ApperIcon from "@/components/ApperIcon";
+import { cn } from "@/utils/cn";
+
+const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const navigation = [
+    { name: "Job Search", href: "/", icon: "Search" },
+    { name: "My Applications", href: "/applications", icon: "FileText" },
+    { name: "Job Alerts", href: "/alerts", icon: "Bell" },
+    { name: "My Resume", href: "/resume", icon: "Upload" },
+  ];
+
+  const isActive = (href) => {
+    if (href === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname.startsWith(href);
+  };
+
+  return (
+    <header className="bg-white/95 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+              <ApperIcon name="Briefcase" size={24} className="text-white" />
+            </div>
+            <div>
+              <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-display">
+                JobHunt Pro
+              </h1>
+              <p className="text-xs text-gray-500 hidden sm:block">Find Your Dream Career</p>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-1">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={cn(
+                  "flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-gray-100",
+                  isActive(item.href)
+                    ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
+                    : "text-gray-700 hover:text-primary"
+                )}
+              >
+                <ApperIcon name={item.icon} size={18} />
+                <span>{item.name}</span>
+              </Link>
+            ))}
+          </nav>
+
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Button variant="success" icon="Zap">
+              Quick Apply
+            </Button>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+          >
+            <ApperIcon name={isMobileMenuOpen ? "X" : "Menu"} size={24} />
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden py-4 border-t border-gray-200 bg-white/95 backdrop-blur-md">
+            <nav className="space-y-2">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={cn(
+                    "flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all duration-200",
+                    isActive(item.href)
+                      ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
+                      : "text-gray-700 hover:bg-gray-100"
+                  )}
+                >
+                  <ApperIcon name={item.icon} size={20} />
+                  <span>{item.name}</span>
+                </Link>
+              ))}
+            </nav>
+            <div className="pt-4 border-t border-gray-200 mt-4">
+              <Button variant="success" className="w-full" icon="Zap">
+                Quick Apply
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Header;

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "jobId": 1,
+    "appliedDate": "2024-01-16T09:30:00Z",
+    "status": "Reviewing",
+    "resumeUsed": "Software_Engineer_Resume.pdf",
+    "notes": "Applied through JobHunt Pro. Looking forward to hearing back from the team."
+  },
+  {
+    "Id": 2,
+    "jobId": 3,
+    "appliedDate": "2024-01-14T14:15:00Z",
+    "status": "Interview",
+    "resumeUsed": "Data_Scientist_Resume.pdf",
+    "notes": "Initial screening call scheduled for next week. Very excited about this opportunity."
+  },
+  {
+    "Id": 3,
+    "jobId": 5,
+    "appliedDate": "2024-01-12T11:45:00Z",
+    "status": "Applied",
+    "resumeUsed": "UX_Designer_Resume.pdf",
+    "notes": "Portfolio submitted along with application. Highlighted relevant design projects."
+  }
+]

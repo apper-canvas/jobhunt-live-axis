@@ -1,0 +1,254 @@
+[
+  {
+    "Id": 1,
+    "title": "Senior Software Engineer",
+    "company": "TechFlow Solutions",
+    "location": "San Francisco, CA",
+    "industry": "Technology",
+    "salary": {
+      "min": 120000,
+      "max": 180000
+    },
+    "description": "Join our dynamic team as a Senior Software Engineer and help build cutting-edge web applications. You'll work with modern technologies like React, Node.js, and AWS to create scalable solutions that impact millions of users worldwide.",
+    "requirements": [
+      "5+ years React experience",
+      "Node.js proficiency",
+      "AWS knowledge",
+      "TypeScript",
+      "Agile methodology"
+    ],
+    "postedDate": "2024-01-15T10:00:00Z",
+    "applicationDeadline": "2024-02-15T23:59:59Z"
+  },
+  {
+    "Id": 2,
+    "title": "Marketing Manager",
+    "company": "GrowthHub Inc",
+    "location": "New York, NY",
+    "industry": "Marketing",
+    "salary": {
+      "min": 80000,
+      "max": 120000
+    },
+    "description": "Lead our marketing initiatives and drive growth through innovative campaigns. Work with a talented team to develop strategies that increase brand awareness and customer acquisition across multiple channels.",
+    "requirements": [
+      "3+ years marketing experience",
+      "Digital marketing expertise",
+      "Data analysis skills",
+      "Campaign management",
+      "Team leadership"
+    ],
+    "postedDate": "2024-01-14T09:30:00Z",
+    "applicationDeadline": "2024-02-14T23:59:59Z"
+  },
+  {
+    "Id": 3,
+    "title": "Data Scientist",
+    "company": "DataWorks Analytics",
+    "location": "Remote",
+    "industry": "Technology",
+    "salary": {
+      "min": 110000,
+      "max": 160000
+    },
+    "description": "Unlock insights from complex datasets and build machine learning models that drive business decisions. Join our remote-first team and work on challenging problems in healthcare, finance, and e-commerce.",
+    "requirements": [
+      "Python/R expertise",
+      "Machine Learning",
+      "SQL proficiency",
+      "Statistical analysis",
+      "Data visualization"
+    ],
+    "postedDate": "2024-01-13T14:15:00Z",
+    "applicationDeadline": "2024-02-13T23:59:59Z"
+  },
+  {
+    "Id": 4,
+    "title": "Product Manager",
+    "company": "InnovateTech",
+    "location": "Austin, TX",
+    "industry": "Technology",
+    "salary": {
+      "min": 130000,
+      "max": 170000
+    },
+    "description": "Drive product strategy and execution for our flagship SaaS platform. Collaborate with engineering, design, and sales teams to deliver features that delight customers and drive business growth.",
+    "requirements": [
+      "Product management experience",
+      "Agile/Scrum knowledge",
+      "User research skills",
+      "Data-driven decisions",
+      "Stakeholder management"
+    ],
+    "postedDate": "2024-01-12T11:45:00Z",
+    "applicationDeadline": "2024-02-12T23:59:59Z"
+  },
+  {
+    "Id": 5,
+    "title": "UX/UI Designer",
+    "company": "DesignStudio Pro",
+    "location": "Los Angeles, CA",
+    "industry": "Design",
+    "salary": {
+      "min": 90000,
+      "max": 130000
+    },
+    "description": "Create beautiful and intuitive user experiences for web and mobile applications. Work closely with product and engineering teams to bring designs to life and improve user satisfaction.",
+    "requirements": [
+      "Figma/Sketch expertise",
+      "User research skills",
+      "Prototyping experience",
+      "Design systems",
+      "Responsive design"
+    ],
+    "postedDate": "2024-01-11T16:20:00Z",
+    "applicationDeadline": "2024-02-11T23:59:59Z"
+  },
+  {
+    "Id": 6,
+    "title": "DevOps Engineer",
+    "company": "CloudScale Systems",
+    "location": "Seattle, WA",
+    "industry": "Technology",
+    "salary": {
+      "min": 115000,
+      "max": 155000
+    },
+    "description": "Build and maintain scalable infrastructure that powers our applications. Work with containerization, CI/CD pipelines, and cloud platforms to ensure reliable and efficient deployments.",
+    "requirements": [
+      "Kubernetes experience",
+      "Docker proficiency",
+      "CI/CD pipelines",
+      "AWS/Azure knowledge",
+      "Infrastructure as Code"
+    ],
+    "postedDate": "2024-01-10T13:00:00Z",
+    "applicationDeadline": "2024-02-10T23:59:59Z"
+  },
+  {
+    "Id": 7,
+    "title": "Sales Director",
+    "company": "SalesForce Elite",
+    "location": "Chicago, IL",
+    "industry": "Sales",
+    "salary": {
+      "min": 150000,
+      "max": 220000
+    },
+    "description": "Lead our sales team to exceed revenue targets and expand our market presence. Develop strategies, mentor team members, and build relationships with key enterprise clients.",
+    "requirements": [
+      "Sales leadership experience",
+      "Enterprise sales",
+      "Team management",
+      "CRM proficiency",
+      "Revenue growth"
+    ],
+    "postedDate": "2024-01-09T08:30:00Z",
+    "applicationDeadline": "2024-02-09T23:59:59Z"
+  },
+  {
+    "Id": 8,
+    "title": "Financial Analyst",
+    "company": "Capital Insights",
+    "location": "Boston, MA",
+    "industry": "Finance",
+    "salary": {
+      "min": 75000,
+      "max": 105000
+    },
+    "description": "Analyze financial data and provide insights that drive strategic business decisions. Work with cross-functional teams to prepare budgets, forecasts, and investment recommendations.",
+    "requirements": [
+      "Financial modeling",
+      "Excel expertise",
+      "Data analysis",
+      "Presentation skills",
+      "CFA preferred"
+    ],
+    "postedDate": "2024-01-08T12:15:00Z",
+    "applicationDeadline": "2024-02-08T23:59:59Z"
+  },
+  {
+    "Id": 9,
+    "title": "Content Marketing Specialist",
+    "company": "ContentCreators Hub",
+    "location": "Denver, CO",
+    "industry": "Marketing",
+    "salary": {
+      "min": 60000,
+      "max": 85000
+    },
+    "description": "Create engaging content that drives brand awareness and customer engagement. Develop blog posts, social media content, and marketing materials that resonate with our target audience.",
+    "requirements": [
+      "Content writing skills",
+      "SEO knowledge",
+      "Social media marketing",
+      "Analytics tools",
+      "Creative thinking"
+    ],
+    "postedDate": "2024-01-07T15:45:00Z",
+    "applicationDeadline": "2024-02-07T23:59:59Z"
+  },
+  {
+    "Id": 10,
+    "title": "Frontend Developer",
+    "company": "WebCraft Studios",
+    "location": "Portland, OR",
+    "industry": "Technology",
+    "salary": {
+      "min": 85000,
+      "max": 125000
+    },
+    "description": "Build responsive and interactive web applications using modern frontend technologies. Collaborate with designers and backend developers to create seamless user experiences.",
+    "requirements": [
+      "React/Vue.js experience",
+      "JavaScript ES6+",
+      "CSS/Sass skills",
+      "Responsive design",
+      "Git proficiency"
+    ],
+    "postedDate": "2024-01-06T10:30:00Z",
+    "applicationDeadline": "2024-02-06T23:59:59Z"
+  },
+  {
+    "Id": 11,
+    "title": "Registered Nurse",
+    "company": "HealthCare Plus",
+    "location": "Miami, FL",
+    "industry": "Healthcare",
+    "salary": {
+      "min": 65000,
+      "max": 90000
+    },
+    "description": "Provide compassionate patient care in our state-of-the-art medical facility. Work with a dedicated team of healthcare professionals to ensure the best outcomes for our patients.",
+    "requirements": [
+      "RN license required",
+      "2+ years experience",
+      "Patient care skills",
+      "Medical knowledge",
+      "Team collaboration"
+    ],
+    "postedDate": "2024-01-05T09:00:00Z",
+    "applicationDeadline": "2024-02-05T23:59:59Z"
+  },
+  {
+    "Id": 12,
+    "title": "Operations Manager",
+    "company": "LogiFlow Enterprises",
+    "location": "Phoenix, AZ",
+    "industry": "Operations",
+    "salary": {
+      "min": 95000,
+      "max": 135000
+    },
+    "description": "Oversee daily operations and optimize processes to improve efficiency and quality. Lead cross-functional teams and implement strategies that drive operational excellence.",
+    "requirements": [
+      "Operations experience",
+      "Process improvement",
+      "Team leadership",
+      "Project management",
+      "Lean methodology"
+    ],
+    "postedDate": "2024-01-04T14:20:00Z",
+    "applicationDeadline": "2024-02-04T23:59:59Z"
+  }
+]
