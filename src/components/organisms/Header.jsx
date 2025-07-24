@@ -8,11 +8,12 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  const navigation = [
+const navigation = [
     { name: "Job Search", href: "/", icon: "Search" },
     { name: "My Applications", href: "/applications", icon: "FileText" },
     { name: "Job Alerts", href: "/alerts", icon: "Bell" },
     { name: "My Resume", href: "/resume", icon: "Upload" },
+    { name: "Interview Prep", href: "/interview-prep", icon: "BookOpen" },
   ];
 
   const isActive = (href) => {

@@ -1,0 +1,302 @@
+[
+  {
+    "Id": 1,
+    "question": "Tell me about yourself and your background.",
+    "category": "general",
+    "difficulty": "beginner",
+    "keyPoints": [
+      "Professional background and experience",
+      "Key achievements and skills",
+      "Career goals and motivations",
+      "Why you're interested in this role"
+    ],
+    "sampleAnswer": "I'm a software engineer with 5 years of experience building web applications. I started my career at a startup where I learned full-stack development, working with React, Node.js, and AWS. In my current role, I've led a team of 3 developers and successfully delivered 10+ projects, including a customer portal that increased user engagement by 40%. I'm passionate about creating user-friendly applications and solving complex technical challenges. I'm looking for an opportunity to grow my leadership skills while contributing to impactful products.",
+    "tips": [
+      "Keep it concise (2-3 minutes)",
+      "Focus on relevant professional experience",
+      "Include specific achievements with numbers",
+      "Connect your background to the role you're applying for"
+    ],
+    "tags": ["introduction", "personal", "background"]
+  },
+  {
+    "Id": 2,
+    "question": "What is your approach to debugging a complex software issue?",
+    "category": "software-engineering",
+    "difficulty": "intermediate",
+    "keyPoints": [
+      "Systematic approach to problem-solving",
+      "Use of debugging tools and techniques",
+      "Documentation and communication",
+      "Prevention strategies"
+    ],
+    "sampleAnswer": "My debugging approach follows a systematic process. First, I reproduce the issue consistently and gather as much information as possible - error logs, user reports, and system metrics. Then I isolate the problem by examining recent changes and using debugging tools like browser dev tools or server logs. I use techniques like binary search to narrow down the cause, adding logging or breakpoints as needed. Once I identify the root cause, I implement a fix and write tests to prevent regression. Throughout the process, I document my findings and communicate progress to stakeholders.",
+    "tips": [
+      "Demonstrate a structured approach",
+      "Mention specific tools you use",
+      "Show how you communicate with team members",
+      "Include examples from real experience"
+    ],
+    "tags": ["debugging", "problem-solving", "technical"]
+  },
+  {
+    "Id": 3,
+    "question": "How do you handle conflicting priorities and tight deadlines?",
+    "category": "general",
+    "difficulty": "intermediate",
+    "keyPoints": [
+      "Priority assessment and decision-making",
+      "Communication with stakeholders",
+      "Time management strategies",
+      "Stress management techniques"
+    ],
+    "sampleAnswer": "When faced with conflicting priorities, I first assess the impact and urgency of each task, considering business value and dependencies. I communicate with stakeholders to understand their expectations and negotiate realistic timelines. I break down large tasks into smaller, manageable pieces and focus on delivering the most critical components first. I also identify opportunities to streamline processes or delegate when possible. To manage stress, I maintain clear documentation of decisions and regular check-ins with my team to ensure alignment.",
+    "tips": [
+      "Show your prioritization framework",
+      "Emphasize communication skills",
+      "Give a specific example if possible",
+      "Demonstrate emotional intelligence"
+    ],
+    "tags": ["time-management", "prioritization", "communication"]
+  },
+  {
+    "Id": 4,
+    "question": "Explain the difference between supervised and unsupervised learning.",
+    "category": "data-science",
+    "difficulty": "beginner",
+    "keyPoints": [
+      "Definition of supervised learning",
+      "Definition of unsupervised learning",
+      "Examples of each type",
+      "When to use each approach"
+    ],
+    "sampleAnswer": "Supervised learning uses labeled training data to learn a mapping from inputs to outputs. The algorithm learns from examples where both the input and correct output are provided. Common examples include classification (predicting categories) and regression (predicting continuous values). Unsupervised learning works with unlabeled data to discover hidden patterns or structures. Examples include clustering (grouping similar data points) and dimensionality reduction. You'd use supervised learning when you have labeled examples and want to predict outcomes, while unsupervised learning is useful for exploratory analysis and finding unknown patterns in data.",
+    "tips": [
+      "Use simple, clear definitions",
+      "Provide concrete examples",
+      "Explain the practical applications",
+      "Show understanding of when to use each"
+    ],
+    "tags": ["machine-learning", "concepts", "algorithms"]
+  },
+  {
+    "Id": 5,
+    "question": "How would you improve user engagement for our product?",
+    "category": "product-management",
+    "difficulty": "advanced",
+    "keyPoints": [
+      "User research and data analysis",
+      "Identification of pain points",
+      "Feature prioritization framework",
+      "Metrics and measurement strategy"
+    ],
+    "sampleAnswer": "I'd start by analyzing current user behavior data to identify drop-off points and usage patterns. Then I'd conduct user interviews and surveys to understand pain points and unmet needs. Based on these insights, I'd prioritize improvements using a framework like RICE (Reach, Impact, Confidence, Effort). For example, if data shows users struggle with onboarding, I'd focus on simplifying the initial experience. I'd implement A/B tests for new features, track key metrics like DAU, retention rates, and feature adoption, and iterate based on results. Regular user feedback loops would ensure we're building what users actually want.",
+    "tips": [
+      "Show data-driven approach",
+      "Mention specific frameworks and methodologies",
+      "Include user research methods",
+      "Demonstrate understanding of product metrics"
+    ],
+    "tags": ["user-engagement", "product-strategy", "analytics"]
+  },
+  {
+    "Id": 6,
+    "question": "Describe a successful marketing campaign you've worked on.",
+    "category": "marketing",
+    "difficulty": "intermediate",
+    "keyPoints": [
+      "Campaign objectives and strategy",
+      "Target audience identification",
+      "Channel selection and execution",
+      "Results and key learnings"
+    ],
+    "sampleAnswer": "I led a digital marketing campaign for a SaaS product launch targeting small businesses. Our goal was to generate 500 qualified leads in 3 months with a $50,000 budget. We identified time-pressed small business owners as our primary audience and created content addressing their pain points. Our multi-channel approach included LinkedIn ads, Google Search campaigns, and a content marketing strategy with case studies and webinars. We achieved 650 qualified leads, exceeding our goal by 30%, with a cost per lead of $65. The key success factors were detailed audience research, compelling case studies, and continuous optimization based on performance data.",
+    "tips": [
+      "Include specific metrics and results",
+      "Explain your strategic thinking",
+      "Show understanding of different marketing channels",
+      "Highlight what made the campaign successful"
+    ],
+    "tags": ["marketing-campaign", "digital-marketing", "results"]
+  },
+  {
+    "Id": 7,
+    "question": "How do you handle objections during a sales conversation?",
+    "category": "sales",
+    "difficulty": "intermediate",
+    "keyPoints": [
+      "Active listening and empathy",
+      "Understanding the root concern",
+      "Addressing objections with facts",
+      "Maintaining relationship focus"
+    ],
+    "sampleAnswer": "When I encounter objections, I first listen actively to understand the real concern behind the objection. I acknowledge their concern to show empathy, then ask clarifying questions to get to the root issue. For example, if a prospect says 'it's too expensive,' I might ask about their budget constraints or what value they need to see to justify the investment. I then address their specific concern with relevant facts, case studies, or testimonials. If I can't fully address the objection, I'm honest about it and explore alternatives. Throughout the process, I maintain focus on building a relationship rather than just closing a deal.",
+    "tips": [
+      "Show emotional intelligence and empathy",
+      "Demonstrate active listening skills",
+      "Provide a structured approach",
+      "Include real examples if possible"
+    ],
+    "tags": ["sales-objections", "communication", "relationship-building"]
+  },
+  {
+    "Id": 8,
+    "question": "Walk me through a financial model you've built.",
+    "category": "finance",
+    "difficulty": "advanced",
+    "keyPoints": [
+      "Model purpose and business context",
+      "Key assumptions and inputs",
+      "Model structure and methodology",
+      "Validation and sensitivity analysis"
+    ],
+    "sampleAnswer": "I built a 3-statement financial model for a Series A startup to evaluate investment scenarios. The model projected 5 years of financials including P&L, balance sheet, and cash flow statements. Key inputs included revenue growth assumptions based on market research, hiring plans, and operational expenses. I structured it with separate worksheets for assumptions, calculations, and outputs, using dynamic formulas to ensure consistency. The model included scenario analysis for different growth rates and sensitivity analysis on key variables like customer acquisition cost and churn rate. I validated it by stress-testing assumptions and comparing outputs to industry benchmarks.",
+    "tips": [
+      "Explain the business context clearly",
+      "Show understanding of financial statements",
+      "Mention validation and testing approaches",
+      "Demonstrate attention to detail and accuracy"
+    ],
+    "tags": ["financial-modeling", "valuation", "analysis"]
+  },
+  {
+    "Id": 9,
+    "question": "How would you approach solving a case about declining market share?",
+    "category": "consulting",
+    "difficulty": "advanced",
+    "keyPoints": [
+      "Structured problem-solving approach",
+      "Market and competitive analysis",
+      "Root cause identification",
+      "Strategic recommendations"
+    ],
+    "sampleAnswer": "I'd use a structured approach starting with clarifying questions about the company, market, and timeline. Then I'd analyze the market share decline through several lenses: market factors (is the overall market growing or shrinking?), competitive factors (new entrants, competitive actions), and company-specific factors (product quality, pricing, distribution). I'd look at customer segments to see if decline is broad-based or concentrated. For root cause analysis, I'd examine the customer journey and value proposition compared to competitors. Finally, I'd develop prioritized recommendations addressing the root causes, such as product improvements, pricing strategy, or enhanced marketing, with clear implementation timelines and success metrics.",
+    "tips": [
+      "Show structured thinking and frameworks",
+      "Ask clarifying questions",
+      "Consider multiple perspectives",
+      "Provide actionable recommendations"
+    ],
+    "tags": ["case-study", "strategy", "problem-solving"]
+  },
+  {
+    "Id": 10,
+    "question": "Describe your design process from concept to final product.",
+    "category": "design",
+    "difficulty": "intermediate",
+    "keyPoints": [
+      "User research and problem definition",
+      "Ideation and concept development",
+      "Prototyping and testing",
+      "Iteration and final implementation"
+    ],
+    "sampleAnswer": "My design process starts with user research - interviews, surveys, and analytics to understand user needs and pain points. I then define the problem clearly and establish success metrics. In the ideation phase, I sketch multiple concepts and collaborate with stakeholders to explore different solutions. I create wireframes and low-fidelity prototypes to test core interactions, then move to high-fidelity designs once the concept is validated. I conduct usability testing with real users, gathering feedback to iterate on the design. Finally, I work closely with developers during implementation, ensuring the final product matches the design intent while being technically feasible.",
+    "tips": [
+      "Show user-centered design approach",
+      "Mention specific design tools and methods",
+      "Emphasize collaboration and iteration",
+      "Include validation and testing processes"
+    ],
+    "tags": ["design-process", "user-research", "prototyping"]
+  },
+  {
+    "Id": 11,
+    "question": "How do you handle conflict resolution between team members?",
+    "category": "hr",
+    "difficulty": "intermediate",
+    "keyPoints": [
+      "Early identification and intervention",
+      "Active listening and mediation",
+      "Finding common ground and solutions",
+      "Follow-up and prevention strategies"
+    ],
+    "sampleAnswer": "When I notice conflict between team members, I address it early through private conversations with each person to understand their perspectives. I arrange a mediated discussion where I facilitate open communication, ensuring both parties feel heard. I focus on identifying the root cause - whether it's miscommunication, different work styles, or competing priorities. Together, we develop actionable solutions and clear agreements about future interactions. I document the resolution and schedule follow-up meetings to ensure the conflict doesn't resurface. To prevent future conflicts, I work on improving team communication channels and establishing clear role expectations.",
+    "tips": [
+      "Show proactive approach to conflict",
+      "Demonstrate mediation and listening skills",
+      "Focus on solutions and prevention",
+      "Include specific examples if possible"
+    ],
+    "tags": ["conflict-resolution", "team-management", "communication"]
+  },
+  {
+    "Id": 12,
+    "question": "What's your biggest professional failure and what did you learn from it?",
+    "category": "general",
+    "difficulty": "advanced",
+    "keyPoints": [
+      "Honest acknowledgment of failure",
+      "Specific situation and context",
+      "Lessons learned and growth",
+      "How you've applied learnings since"
+    ],
+    "sampleAnswer": "Early in my career, I led a project that failed to meet its launch deadline, causing significant revenue loss. I had underestimated the complexity of integrating with a third-party API and didn't communicate the risks clearly to stakeholders. The project was delayed by three months. I learned the importance of thorough technical planning, regular risk assessment, and transparent communication with leadership about potential challenges. Since then, I always create detailed project plans with buffer time, conduct regular risk reviews, and maintain open communication about project status. This experience taught me that proactive problem-solving and honest communication are crucial for successful project management.",
+    "tips": [
+      "Choose a real, significant failure",
+      "Take full responsibility without blame",
+      "Focus on specific lessons learned",
+      "Show how you've grown and improved"
+    ],
+    "tags": ["failure", "learning", "growth", "responsibility"]
+  },
+  {
+    "Id": 13,
+    "question": "Explain REST APIs and when you would use them.",
+    "category": "software-engineering",
+    "difficulty": "intermediate",
+    "keyPoints": [
+      "Definition and principles of REST",
+      "HTTP methods and status codes",
+      "Stateless communication",
+      "Use cases and benefits"
+    ],
+    "sampleAnswer": "REST (Representational State Transfer) is an architectural style for designing web services that uses standard HTTP methods. RESTful APIs are stateless, meaning each request contains all information needed to process it. They use HTTP methods like GET (retrieve data), POST (create), PUT (update), and DELETE (remove) to perform operations on resources identified by URLs. REST APIs return standard HTTP status codes (200 for success, 404 for not found, etc.) and typically use JSON for data exchange. I'd use REST APIs for web applications, mobile apps, and microservices because they're simple, scalable, and work well with existing web infrastructure. They're ideal when you need standard CRUD operations and want easy integration across different platforms.",
+    "tips": [
+      "Explain core REST principles clearly",
+      "Mention HTTP methods and status codes",
+      "Give practical use cases",
+      "Compare with other API styles if relevant"
+    ],
+    "tags": ["REST", "APIs", "web-development", "architecture"]
+  },
+  {
+    "Id": 14,
+    "question": "How do you ensure data quality in your analysis?",
+    "category": "data-science",
+    "difficulty": "intermediate",
+    "keyPoints": [
+      "Data validation and cleaning processes",
+      "Identifying and handling outliers",
+      "Documentation and reproducibility",
+      "Quality checks and validation"
+    ],
+    "sampleAnswer": "I ensure data quality through a systematic approach. First, I perform exploratory data analysis to understand the data structure, identify missing values, outliers, and inconsistencies. I create data validation rules to check for expected ranges, formats, and relationships. For missing data, I determine if it's missing at random and choose appropriate handling methods - imputation, exclusion, or flagging. I handle outliers by investigating their cause and deciding whether to keep, transform, or remove them based on business context. I document all cleaning steps and create reproducible scripts. Finally, I validate results through cross-checks with known benchmarks and collaborate with domain experts to ensure the analysis makes business sense.",
+    "tips": [
+      "Show systematic approach to data cleaning",
+      "Mention specific techniques and tools",
+      "Emphasize documentation and reproducibility",
+      "Include domain knowledge validation"
+    ],
+    "tags": ["data-quality", "data-cleaning", "validation", "analysis"]
+  },
+  {
+    "Id": 15,
+    "question": "How do you prioritize features in a product roadmap?",
+    "category": "product-management",
+    "difficulty": "advanced",
+    "keyPoints": [
+      "User impact and business value assessment",
+      "Resource requirements and constraints",
+      "Strategic alignment and dependencies",
+      "Stakeholder input and data-driven decisions"
+    ],
+    "sampleAnswer": "I use a multi-factor approach to prioritize features. First, I assess user impact by analyzing user research, support tickets, and usage data to understand which features would solve the biggest user problems or drive engagement. I evaluate business value through metrics like potential revenue impact, strategic importance, and competitive advantage. I consider resource requirements - development effort, design complexity, and technical dependencies. I use frameworks like RICE (Reach, Impact, Confidence, Effort) or MoSCoW to score and rank features objectively. I also factor in strategic initiatives, technical debt, and market timing. Regular stakeholder input and quarterly roadmap reviews ensure alignment with business goals and allow for adjustments based on new data or changing priorities.",
+    "tips": [
+      "Show structured decision-making approach",
+      "Mention specific prioritization frameworks",
+      "Balance user needs with business goals",
+      "Include stakeholder management aspects"
+    ],
+    "tags": ["product-roadmap", "prioritization", "strategy", "frameworks"]
+  }
+]

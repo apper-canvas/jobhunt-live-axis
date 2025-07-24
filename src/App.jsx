@@ -6,7 +6,7 @@ import JobSearchPage from "@/components/pages/JobSearchPage";
 import ApplicationsPage from "@/components/pages/ApplicationsPage";
 import JobAlertsPage from "@/components/pages/JobAlertsPage";
 import ResumePage from "@/components/pages/ResumePage";
-
+import InterviewPrepPage from "@/components/pages/InterviewPrepPage";
 function App() {
   return (
     <Router>
@@ -14,11 +14,12 @@ function App() {
         <Header />
         
         <main>
-          <Routes>
+<Routes>
             <Route path="/" element={<JobSearchPage />} />
             <Route path="/applications" element={<ApplicationsPage />} />
             <Route path="/alerts" element={<JobAlertsPage />} />
             <Route path="/resume" element={<ResumePage />} />
+            <Route path="/interview-prep" element={<InterviewPrepPage />} />
           </Routes>
         </main>
 
