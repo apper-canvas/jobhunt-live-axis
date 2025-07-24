@@ -1,13 +1,60 @@
 import React, { useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 import Button from "@/components/atoms/Button";
 import ApperIcon from "@/components/ApperIcon";
 import { cn } from "@/utils/cn";
 import { AuthContext } from "@/App";
+import { jobService } from "@/services/api/jobService";
+import { applicationService } from "@/services/api/applicationService";
+
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [quickApplyLoading, setQuickApplyLoading] = useState(false);
   const location = useLocation();
   const { logout } = useContext(AuthContext);
+
+  const handleQuickApply = async () => {
+    if (quickApplyLoading) return;
+    
+    setQuickApplyLoading(true);
+    
+    try {
+      // Get the most recent job
+      const jobs = await jobService.getAll();
+      
+      if (!jobs || jobs.length === 0) {
+        toast.error("No jobs available for quick apply at the moment.", {
+          position: "top-right",
+          autoClose: 4000,
+        });
+        return;
+      }
+
+      const latestJob = jobs[0]; // Get the most recent job
+      
+      // Create application for the latest job
+      await applicationService.create({
+        jobId: latestJob.Id,
+        resumeUsed: "Default Resume",
+        notes: `Quick Apply to ${latestJob.title_c || latestJob.Name} at ${latestJob.company_c} through JobHunt Pro`
+      });
+      
+      toast.success(`🚀 Quick Apply successful! Applied to ${latestJob.title_c || latestJob.Name} at ${latestJob.company_c}!`, {
+        position: "top-right",
+        autoClose: 5000,
+      });
+      
+    } catch (error) {
+      console.error("Quick Apply failed:", error);
+      toast.error("❌ Quick Apply failed. Please try again or apply manually.", {
+        position: "top-right",
+        autoClose: 4000,
+      });
+    } finally {
+      setQuickApplyLoading(false);
+    }
+  };
 const navigation = [
     { name: "Job Search", href: "/", icon: "Search" },
     { name: "My Applications", href: "/applications", icon: "FileText" },
@@ -61,8 +108,13 @@ const navigation = [
 
           {/* Desktop CTA */}
 <div className="hidden md:flex items-center space-x-4">
-            <Button variant="success" icon="Zap">
-              Quick Apply
+            <Button 
+              variant="success" 
+              icon="Zap"
+              onClick={handleQuickApply}
+              disabled={quickApplyLoading}
+            >
+              {quickApplyLoading ? "Applying..." : "Quick Apply"}
             </Button>
             <Button variant="secondary" icon="LogOut" onClick={logout}>
               Logout
@@ -100,8 +152,14 @@ const navigation = [
               ))}
             </nav>
 <div className="pt-4 border-t border-gray-200 mt-4 space-y-3">
-              <Button variant="success" className="w-full" icon="Zap">
-                Quick Apply
+              <Button 
+                variant="success" 
+                className="w-full" 
+                icon="Zap"
+                onClick={handleQuickApply}
+                disabled={quickApplyLoading}
+              >
+                {quickApplyLoading ? "Applying..." : "Quick Apply"}
               </Button>
               <Button variant="secondary" className="w-full" icon="LogOut" onClick={logout}>
                 Logout
