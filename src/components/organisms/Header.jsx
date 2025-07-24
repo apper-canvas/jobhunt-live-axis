@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Button from "@/components/atoms/Button";
 import ApperIcon from "@/components/ApperIcon";
 import { cn } from "@/utils/cn";
-
+import { AuthContext } from "@/App";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-
+  const { logout } = useContext(AuthContext);
 const navigation = [
     { name: "Job Search", href: "/", icon: "Search" },
     { name: "My Applications", href: "/applications", icon: "FileText" },
@@ -60,9 +60,12 @@ const navigation = [
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-4">
+<div className="hidden md:flex items-center space-x-4">
             <Button variant="success" icon="Zap">
               Quick Apply
+            </Button>
+            <Button variant="secondary" icon="LogOut" onClick={logout}>
+              Logout
             </Button>
           </div>
 
@@ -96,9 +99,12 @@ const navigation = [
                 </Link>
               ))}
             </nav>
-            <div className="pt-4 border-t border-gray-200 mt-4">
+<div className="pt-4 border-t border-gray-200 mt-4 space-y-3">
               <Button variant="success" className="w-full" icon="Zap">
                 Quick Apply
+              </Button>
+              <Button variant="secondary" className="w-full" icon="LogOut" onClick={logout}>
+                Logout
               </Button>
             </div>
           </div>
