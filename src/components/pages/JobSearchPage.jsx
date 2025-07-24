@@ -4,23 +4,24 @@ import { toast } from "react-toastify";
 import SearchBar from "@/components/molecules/SearchBar";
 import JobSearchFilters from "@/components/organisms/JobSearchFilters";
 import JobGrid from "@/components/organisms/JobGrid";
+import JobDetailsModal from "@/components/molecules/JobDetailsModal";
 import Button from "@/components/atoms/Button";
 import ApperIcon from "@/components/ApperIcon";
 import { useJobs } from "@/hooks/useJobs";
 import { useApplications } from "@/hooks/useApplications";
-
 const JobSearchPage = () => {
   const navigate = useNavigate();
   const [filters, setFilters] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
   const [showFilters, setShowFilters] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(null);
+  const [showJobDetails, setShowJobDetails] = useState(false);
   
   const { jobs, loading, error, searchJobs } = useJobs();
   const { applications, addApplication } = useApplications();
 
   // Get applied job IDs
   const appliedJobIds = applications.map(app => app.jobId);
-
   const handleSearch = (term) => {
     setSearchTerm(term);
     const searchFilters = { ...filters, searchTerm: term };
@@ -60,43 +61,14 @@ const handleApply = async (job) => {
     }
   };
 
-  const handleViewDetails = (job) => {
-    // Display comprehensive job details through enhanced toast notifications
-    const salaryInfo = job.salary_min_c && job.salary_max_c 
-      ? `$${job.salary_min_c.toLocaleString()} - $${job.salary_max_c.toLocaleString()}`
-      : "Competitive salary";
-    
-    const requirements = job.requirements_c && job.requirements_c.length > 0 
-      ? job.requirements_c.substring(0, 150) + (job.requirements_c.length > 150 ? "..." : "")
-      : "Requirements not specified";
+const handleViewDetails = (job) => {
+    setSelectedJob(job);
+    setShowJobDetails(true);
+  };
 
-    // Job overview
-    toast.info(`🏢 ${job.title_c} at ${job.company_c}\n📍 ${job.location_c} • 🏭 ${job.industry_c}\n💰 ${salaryInfo}`, {
-      position: "top-right",
-      autoClose: 6000,
-    });
-
-    // Job description and requirements
-    setTimeout(() => {
-      toast.success(`📋 Job Description:\n${job.description_c?.substring(0, 200)}${job.description_c?.length > 200 ? "..." : ""}\n\n🎯 Key Requirements:\n${requirements}`, {
-        position: "top-right",
-        autoClose: 8000,
-      });
-    }, 500);
-
-    // Application deadline
-    if (job.application_deadline_c) {
-      setTimeout(() => {
-        const deadline = new Date(job.application_deadline_c);
-        const timeUntilDeadline = deadline.getTime() - new Date().getTime();
-        const daysLeft = Math.ceil(timeUntilDeadline / (1000 * 60 * 60 * 24));
-        
-        toast.warning(`⏰ Application Deadline: ${deadline.toLocaleDateString()}\n${daysLeft > 0 ? `${daysLeft} days remaining` : "Deadline passed"}`, {
-          position: "top-right",
-          autoClose: 5000,
-        });
-      }, 1000);
-    }
+  const closeJobDetails = () => {
+    setShowJobDetails(false);
+    setSelectedJob(null);
   };
 
   const handleRetry = () => {
@@ -234,8 +206,15 @@ const handleApply = async (job) => {
               </div>
             </div>
           </div>
-        </div>
+</div>
       )}
+
+      {/* Job Details Modal */}
+      <JobDetailsModal
+        job={selectedJob}
+        isOpen={showJobDetails}
+        onClose={closeJobDetails}
+      />
     </div>
   );
 };
