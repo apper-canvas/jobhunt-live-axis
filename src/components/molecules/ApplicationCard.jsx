@@ -26,7 +26,10 @@ const ApplicationCard = ({ application, job, onViewDetails, onWithdraw }) => {
     }
   };
 
-  const getCompanyInitials = (companyName) => {
+const getCompanyInitials = (companyName) => {
+    if (!companyName || typeof companyName !== 'string') {
+      return "NA";
+    }
     return companyName
       .split(" ")
       .map(word => word[0])
